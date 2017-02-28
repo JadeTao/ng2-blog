@@ -1,0 +1,6 @@
+<div class="article-detail"> 
+    <div *ngIf="article" class="container">
+            <h1>{{article.title}}</h1>       
+            <div [innerHTML]="content" class="content" ></div>
+    </div>
+</div>

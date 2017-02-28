@@ -1,0 +1,11 @@
+<div class="article-list">
+    <div class="container" *ngFor="let item of list" >
+        <a [routerLink]="['/article/detail',item.id]"><h1 class="title">{{item.title}} </h1></a>
+        <div class="stamp">
+            <span class="date">{{item.createdAt}}</span> 
+            <span class="tag-wrapper"> <span class="tag" *ngFor="let tag of item.tags">{{tag}}</span></span>
+        </div>
+        <article class="preview">{{item.preview}} </article>
+    <!--    <hr> -->
+    </div>
+</div>
