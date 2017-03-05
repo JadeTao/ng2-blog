@@ -1,6 +1,80 @@
  import{Detail} from'./article/article-detail/detail'
  export var ARTICLES:Detail[]=[
-        {id:1,title:'关于这个博客的一些说明',createdAt:'2017/2/28',tags:['前端','angular'],preview:'',content:`
+        {id:3,title:'Nodejs编程与异步控制',createdAt:'2017/2/28',tags:['前端','angular'],preview:'',content:`
+#### 前言：
+本文章的内容围绕我的这个项目展开,[Github地址](https://github.com/JadeTao/MarkDown-img-helper)。
+
+### 需求
+日前写MarkDown时，需要插入本地的图片。往常的做法是将图片上传到第三方图床，然后回到MarkDown，将对应url按照语法插入到文章中。这样操作未免太过繁琐，所以索性写一个NodeJS脚本自动进行批量操作。
+
+### 前期准备
+- 七牛云对象存储服务，作为图床。
+- Nodejs&npm，作为开发环境。
+
+### 开发过程
+1. 七牛云为NodeJS开发提供了丰富的[官方SDK和API](https://developer.qiniu.com/kodo/sdk/nodejs)，在本项目中，只用到了文件上传服务。作为npm的使用者，下载SDK是不明智的。我选择了使用npm安装qiniu包。
+
+		创建一个文件夹，在目录里执行下列命令
+		
+		npm init
+		//为项目生成一个package.json，管理版本、依赖、license、git等		
+		
+		npm install qiniu --save
+		//安装包，并作为依赖写入package.json
+		
+2. 新建upload.js，我们所有的程序和逻辑都将在这里展开。
+
+	NodeJS遵循CommonJS规范对模块进行同步加载，因此要在代码的最开始进行模块加载。
+		
+		var qiniu = require('qiniu');   
+		//默认后缀为.js		
+		
+		var fs = require('fs'); 
+		 //fs即file system，由NodeJS提供，用于操作文件
+
+	配置权限，与七牛云仓库对接
+	
+		//配置！
+		qiniu.conf.ACCESS_KEY = "Access Key "
+		qiniu.conf.SECRET_KEY = "Secret Key"
+		bucket = "要上传的空间名"//要上传的空间名
+		bucketUrl = "七牛云通用域名"
+		resultFile = "./url.txt"  //用于储存最后生成的url
+		localFile = __dirname + "/img"  //用于储存要上传的文件
+
+	主逻辑部分不贴了。简单阐述一下流程：
+			
+			 fs.readdir(path, [callback(err,files)])
+	使用fs.readdir对img文件夹进行异步读取，在回调函数内对存储着img内所有文件的files数组遍历、上传，每次循环内生成每个文件特有的up token，根据这个uptoken使用qiniu提供的上传api来上传文件，上传成功后将url写入url.txt,并删除对应文件。
+
+### 异步流程控制
+	
+梳理一下，列出异步过程框架：
+	
+		fs.readdir{
+			遍历循环体{
+			//我将上传和文件的读写删除封装进了同一个函数内
+				封装处理{  
+					上传;
+					url写入;
+					文件删除;
+				}
+			}
+		}
+可见，文件夹的读写是异步的，遍历过程是异步的，即对文件夹内一个文件的封装处理操作未结束时，便开始处理下一个文件。
+在初次开发时，我并没有注意到这个问题，导致url.txt文件内的url序列跟自然文件不同，那如何解决呢？
+#### 引入[Async.js](http://caolan.github.io/async/)
+Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. It is originally designed for use with Node.js and installable via 
+
+		npm install --save async
+	
+Async提供了解决对集合的异步流程控制的有效解决方法——[Async.eachOfSerise](http://caolan.github.io/async/docs.html#eachOfSeries)。
+这个函数将集合内的并行异步改为串行，保证对img文件夹内每个文件的操作是按顺序来的。
+好了，问题解决。
+
+
+p.s.技术文章真的难写。`},
+        {id:2,title:'关于这个博客的一些说明',createdAt:'2017/2/28',tags:['前端','angular'],preview:'',content:`
 ### 基本介绍
 这是一个基于Angular JS 2.0+的单页应用(SPA)。
 >####亮点
@@ -30,7 +104,7 @@
 任重而道远。
 
 `},
-        {id:4,title:'走过秋天的一刻钟',createdAt:'2017/2/14',tags:['随笔','杂志'],preview:'',content:
+        {id:1,title:'走过秋天的一刻钟',createdAt:'2017/2/14',tags:['随笔','杂志'],preview:'',content:
 `错过第一台车不是我们的错，隔着校门我们看着七路车缓缓驶过。第二台车停站的时候我们没有挤上去。然后我们望着远处的松树等待第三台车的到来。一阵微风过后月亮突然浮现在我们身后的天边，两侧的路灯骤然亮起。
 
 “还是走着回去吧。”我提议道。

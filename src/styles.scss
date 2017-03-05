@@ -66,7 +66,7 @@ app-root{
 
 }
 
-//blockquote样式放在全局，放在子页面无效，可能由于动态渲染
+//MD样式放在全局，放在子页面无效，可能由于动态渲染
 blockquote{
     padding: 20px;
     margin-bottom: 25px;
@@ -77,3 +77,13 @@ blockquote{
     font-weight: 400;
     line-height: 30px;
 }
+pre{
+    background-color: #625772;
+    color:#FEFAEC;
+    border-radius:5px;
+    padding:10px 30px;
+    code{
+        font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+    }
+    
+}  
