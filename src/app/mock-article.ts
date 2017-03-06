@@ -1,6 +1,6 @@
  import{Detail} from'./article/article-detail/detail'
  export var ARTICLES:Detail[]=[
-        {id:3,title:'Nodejs编程与异步控制',createdAt:'2017/2/28',tags:['前端','angular'],preview:'',content:`
+        {id:3,title:'Nodejs编程与异步控制',createdAt:'2017/3/5',tags:['前端','NodeJS'],preview:'',content:`
 #### 前言：
 本文章的内容围绕我的这个项目展开,[Github地址](https://github.com/JadeTao/MarkDown-img-helper)。
 
