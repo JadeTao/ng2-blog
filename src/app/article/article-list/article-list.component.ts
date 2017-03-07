@@ -16,6 +16,9 @@ export class ArticleListComponent implements OnInit {
     ) {}
 
     private list: Detail[]
+    scroll(){
+        window.scrollTo(0,0);
+    }
 
     ngOnInit() {
        this.list=this.listService.getList();

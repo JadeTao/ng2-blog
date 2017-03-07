@@ -29,7 +29,6 @@ export class ArticleDetailComponent implements OnInit {
             .subscribe((article:Detail) => {
                 this.article = article;
                 this.content=this.detailService.converter.makeHtml(this.article.content); });       
-      (function(){document.documentElement.scrollTop=0}());
     }
 
 }
