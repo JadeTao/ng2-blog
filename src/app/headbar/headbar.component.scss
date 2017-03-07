@@ -6,10 +6,7 @@
     width: 100%;
     height: 400px;
     background-color:#57D1C9;
-    box-shadow: 0 5px 15px #aaaaaa;
-
-
-    
+    box-shadow: 0 5px 15px #aaaaaa; 
 
 
 
@@ -42,13 +39,6 @@
         transition: all .5s ease-in;
     }
 
-    .border{
-        border: 10px solid #F2F062;
-        border-left-color: #F03861;
-        border-right-color: #F03861;
-        box-sizing: border-box;
-        transition: all .5s ease-in;
-    }
     .self:hover .mask{
         background-color: rgba(0,0,0,.5);
         color:rgba(255,255,255,1);
@@ -98,14 +88,16 @@
                 left: 50%;
                 bottom: -2px;
                 width: 0;
-                height: 3px;
+                height: 5px;
                 background: #4285f4;
                 transition: all .3s;
+                opacity: .3
             }
             .list:hover:before{
                 width: 100%;
                 left: 0;
                 right: 0;
+                opacity: 1.0;
             }          
         }
     }
