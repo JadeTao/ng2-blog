@@ -12,12 +12,15 @@ import { FootbarComponent } from './footbar/footbar.component'
 
 const routes: Routes = [
     { 
-        path: 'home',
+        path:'home',
         component: IntroComponent
-    },   
-    {
+    },{
         path:'article',
         loadChildren:'app/article/article.module#ArticleModule',
+        data:{preload:false}
+    },{
+        path:'lab',
+        loadChildren:'app/lab/lab.module#LabModule',
         data:{preload:false}
     },
     {
@@ -28,7 +31,6 @@ const routes: Routes = [
     {
         path:'**',
         redirectTo: '/home',
-
     }
    
 ];

@@ -46,18 +46,17 @@ app-root{
     }
 
     article-list{
-        /* 将 flex-grow 设置为1，该元素会占用所有的可使用空间
-            而其他元素该属性值为0，因此不会得到多余的空间*/
-        /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
         flex: 1 0 auto;
     }
 
     article-detail{
-        /* 将 flex-grow 设置为1，该元素会占用所有的可使用空间
-            而其他元素该属性值为0，因此不会得到多余的空间*/
-        /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
         flex: 1 0 auto;
     }
+    
+    lab-main{
+        flex: 1 0 auto;
+    }
+
 
     footbar{
         /* 和 header 一样，footer 也采用固定高度*/
