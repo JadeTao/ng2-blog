@@ -36,6 +36,7 @@ app-root{
         /* 采用固定的高度，只占用必须的空间 */
         /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
         flex: 0 0 auto;
+        z-index: 10;
     }
 
     intro{
@@ -52,7 +53,7 @@ app-root{
     article-detail{
         flex: 1 0 auto;
     }
-    
+
     lab-main{
         flex: 1 0 auto;
     }
