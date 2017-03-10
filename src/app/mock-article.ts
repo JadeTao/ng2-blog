@@ -1,5 +1,67 @@
  import{Detail} from'./article/article-detail/detail'
  export var ARTICLES:Detail[]=[
+	 {id:4,title:'阿里的一道编程测验',createdAt:'2017/3/10',tags:['面试','设计模式'],preview:'',content:`
+前天投了阿里的暑期实习前端岗位，按流程我被要求做一道编程测验，题目如下
+![这里](http://om1o3l1z1.bkt.clouddn.com/ali.png)
+当时限时30min，结点判定和递归方面没处理好，所以今天特地拿出时间整理了一下。
+###先贴整理好的代码
+
+    //主体
+	function printProp(obj,chain){
+	        var arr=chain.split('.');
+	        console.log(arr);
+	        var len=arr.length;
+	        if(len==1){           
+	                return obj[chain];                             
+	        }else{
+	            var objnext=obj[arr.shift()];
+	            var chainnext=arr.join('.');
+	            if(obj.hasOwnProperty(objnext)){
+	                return printProp(objnext,chainnext);
+	            }else{
+	                return undefined;
+	            }            
+	        }
+	}
+    //用来测试的对象
+    var obj={
+	    name:'jader',
+	    skills:{
+	        html:7,
+	        css:6,
+	        js:8,
+	        other:{
+	            ng:4,
+	            scss:4
+	            etc:etc
+	        }
+	    }
+	}
+###思路分析
+
+
+当chain直接是对象的第一级子节点时，比如
+
+	printProp(obj,'name')
+可以直接这样获取:
+
+	return obj[name]
+但如果chain包含多级子节点时，比如
+	
+	printProp(obj,'skills.other.ng')
+而在JavaScript是不支持obj[skills.other.ng]这种输出方式的，我们需要另寻他路，毫无疑问，应当选择**递归**，判断chain是否包含子结点，否，则直接输出该属性值,是，则以chain中的第一个字结点为下一次递归的obj对象，以chain的其余部分为下一次递归的chain。
+大致思路如此，细节部分使用了
+
+	Array.prototype.shift();
+	Array.prototype.join();
+	String.prototype.split();
+
+不再赘述。
+
+**现在想想也不难，当时卡在递归和结点判断的坑里实在不应该。**
+
+###题外之话
+最近在看jQuery的源码和设计模式，心里一直觉得阿里的这道题有种设计模式的味道，但找来找去发现没有一种是贴切的。设计模式是抽象层的代码思想，没有足够的代码量实在无法驾驭，所以开始强迫自己写些东西，放到这个博客的lab里。第一个项目是将一个CSS3+原生JavaScript的散列画廊重构移植到NG框架里，一方面加深自己对NG的掌握，一方面有朝一日把它抽象成插件，贡献到NG社区，也算是对NG推广的微弱贡献吧。`}
         {id:3,title:'Nodejs编程与异步控制',createdAt:'2017/3/5',tags:['前端','NodeJS'],preview:'',content:`
 #### 前言：
 本文章的内容围绕我的这个项目展开,[Github地址](https://github.com/JadeTao/MarkDown-img-helper)。
