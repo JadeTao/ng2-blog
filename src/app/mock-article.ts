@@ -62,7 +62,7 @@
 
 ###题外之话
 最近在看jQuery的源码和设计模式，心里一直觉得阿里的这道题有种设计模式的味道，但找来找去发现没有一种是贴切的。设计模式是抽象层的代码思想，没有足够的代码量实在无法驾驭，所以开始强迫自己写些东西，放到这个博客的lab里。第一个项目是将一个CSS3+原生JavaScript的散列画廊重构移植到NG框架里，一方面加深自己对NG的掌握，一方面有朝一日把它抽象成插件，贡献到NG社区，也算是对NG推广的微弱贡献吧。`}
-        {id:3,title:'Nodejs编程与异步控制',createdAt:'2017/3/5',tags:['前端','NodeJS'],preview:'',content:`
+        ,{id:3,title:'Nodejs编程与异步控制',createdAt:'2017/3/5',tags:['前端','NodeJS'],preview:'',content:`
 #### 前言：
 本文章的内容围绕我的这个项目展开,[Github地址](https://github.com/JadeTao/MarkDown-img-helper)。
 
