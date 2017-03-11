@@ -20,7 +20,7 @@ export class GalleryDirective implements OnInit {
                 this.renderer.setElementClass(this.el.nativeElement,'photo-front',true);
                 this.renderer.setElementClass(this.el.nativeElement,'photo-back',false);
             }
-        }
+    }
 
 
 
@@ -30,7 +30,7 @@ export class GalleryDirective implements OnInit {
         var rand=Math.random()*(max-min)+min;
         return rand;
     }
-
+    
 
     ngOnInit(){
 
