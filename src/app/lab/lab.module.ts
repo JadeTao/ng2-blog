@@ -8,6 +8,7 @@ import { LabRoutingModule } from './lab-routing.module'
 import { LabMainComponent } from './lab-main/lab-main.component'
 import { HashGalleryComponent } from './hashgallery/hashgallery.component'
 import { GalleryDirective } from './hashgallery/gallery.directive'
+import { GalleryRandomDirective } from './hashgallery/galleryrandom.directive'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { GalleryDirective } from './hashgallery/gallery.directive'
     declarations: [
         LabMainComponent,
         HashGalleryComponent,
-        GalleryDirective
+        GalleryDirective,
+        GalleryRandomDirective
     ],
     exports: [LabMainComponent]
 })

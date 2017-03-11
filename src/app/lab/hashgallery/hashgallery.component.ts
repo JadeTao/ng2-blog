@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { Renderer, ElementRef } from '@angular/core';
 import { Img } from './img'
 import { IMG } from './mock-img'
@@ -14,10 +14,11 @@ import { IMG } from './mock-img'
 })
 export class HashGalleryComponent implements OnInit {
 
-    constructor(private el: ElementRef,private renderer:Renderer) {}
+    constructor(private el: ElementRef,private renderer:Renderer) {    }
     private list: Img[]=IMG;
-
-
+    private w
+    private temp
+ 
     randomSort(){
         var arr=this.list;
         for (let i = arr.length; i; i--) {
@@ -32,6 +33,10 @@ export class HashGalleryComponent implements OnInit {
     ngOnInit(){
         this.randomSort();
     }
-
-
+    ngAfterViewInit(){
+        this.w=this.el.nativeElement.querySelector('#wrap')
+        console.log(this.w.clientWidth+'_'+this.w.clientHeight);
+        this.temp=this.el.nativeElement.querySelectorAll('.photo');
+        console.log(this.temp)
+    }
 }
