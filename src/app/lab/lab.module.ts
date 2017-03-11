@@ -7,7 +7,7 @@ import { LabRoutingModule } from './lab-routing.module'
 
 import { LabMainComponent } from './lab-main/lab-main.component'
 import { HashGalleryComponent } from './hashgallery/hashgallery.component'
-
+import { GalleryDirective } from '../directive/gallery.directive'
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { HashGalleryComponent } from './hashgallery/hashgallery.component'
     ],
     declarations: [
         LabMainComponent,
-        HashGalleryComponent
+        HashGalleryComponent,
+        GalleryDirective
     ],
     exports: [LabMainComponent]
 })
