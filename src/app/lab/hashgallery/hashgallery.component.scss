@@ -168,12 +168,12 @@
 
 
     .photo-center {
-            left: 50%;
-            top:50%;
-           // transform: rotate(0deg) scale(1.3,1.3) !important;
-            margin-top:-160px;
-            margin-left: -130px;
-            z-index:99;
+            left: 50% !important;
+            top:50% !important;
+            transform: rotate(0deg) scale(1.2,1.2) !important;
+            margin-top:-160px !important;
+            margin-left: -130px !important;
+            z-index:99 !important;
     }
 
         .photo-front{
@@ -185,16 +185,18 @@
             .photo-wrap{
                 transform: rotateY(-180deg);
             }
+        }    
+}
+
+.photo-wrap{
+    pointer-events:none;
+    div{
+        pointer-events:none;
+        p{
+            pointer-events:none;
+            img{
+                pointer-events:none;
+            }
         }
-
-
-
-
-
-
-
-
-
-
-    
+    }
 }

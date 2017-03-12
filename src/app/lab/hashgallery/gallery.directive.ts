@@ -20,6 +20,9 @@ export class GalleryDirective implements OnInit {
                 this.renderer.setElementClass(this.el.nativeElement,'photo-front',true);
                 this.renderer.setElementClass(this.el.nativeElement,'photo-back',false);
             }
+            if(!/photo-center/.test(cln)){
+                this.renderer.setElementClass(this.el.nativeElement,'photo-center',true);
+            }
     }
 
 

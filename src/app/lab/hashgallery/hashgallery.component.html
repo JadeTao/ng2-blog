@@ -1,6 +1,6 @@
 <div class="gallery">
 <div thrwrap class="wrap" id="wrap">
-    <div draggable="true"  thephoto *ngFor="let item of list" class="photo photo-front"  id="photo_{{item.id}}"><!--控制2D位置、旋转-->
+    <div thephoto *ngFor="let item of list" (click)="turn($event)" class="photo photo-front"  id="photo_{{item.id}}"><!--控制2D位置、旋转-->
                 <div class="photo-wrap"><!--控制3D翻转-->
                     <div class="side side-front">
                         <p class="image">
@@ -14,7 +14,7 @@
                 </div>
     </div>
     <nav id="nav" class="nav">
-        <span *ngFor="let item of list" id="nav_{{item.id}}"></span>
+        <span *ngFor="let item of list" id="{{item.id}}" class="i" (click)="onNav($event)" ></span>
     </nav>
 </div>
 <div>
