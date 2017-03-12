@@ -121,15 +121,17 @@ export class HashGalleryComponent implements OnInit {
         var number=Math.random()*diff+min;
         return number;       
     }
+
     reposition(nodelist){
         for(let i=0;i<nodelist.length;i++){
-            if(i<Math.ceil(nodelist.length/2)){
+            if(Math.random()>0.5000){
                 nodelist[i].style.left=this.random(this.therange.left.x)+'px';
                 nodelist[i].style.top=this.random(this.therange.left.y)+'px';
             }else{
                 nodelist[i].style.left=this.random(this.therange.right.x)+'px';
-                nodelist[i].style.top=this.random(this.therange.right.y)+'px';                
+                nodelist[i].style.top=this.random(this.therange.right.y)+'px';                          
             }
+            nodelist[i].style['transform']='rotate('+this.random([-150,150])+'deg)';
         }        
     }
 
