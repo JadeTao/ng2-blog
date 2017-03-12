@@ -68,6 +68,27 @@ export class HashGalleryComponent implements OnInit {
         let _id = _navele.id;
         let _itsphoto=this.el.nativeElement.querySelector('#photo_'+_id);
         let _photoid=_itsphoto.id;
+        let _cln = _navele.className;
+        let _allnav = this.el.nativeElement.querySelectorAll('.i');
+        
+        for(let i=0;i<_allnav.length;i++){
+            if(/i-current/.test(_allnav[i].className)){
+                this.renderer.setElementClass(_allnav[i],'i-current',false);
+                this.renderer.setElementClass(_allnav[i],'i-front',false);
+                this.renderer.setElementClass(_allnav[i],'i-back',false);
+            }
+        }
+        if(/i-front/.test(_cln)){
+            this.renderer.setElementClass(event.target,'i-front',false);
+            this.renderer.setElementClass(event.target,'i-back',true);
+            this.renderer.setElementClass(event.target,'i-current',true);
+        }else{
+            this.renderer.setElementClass(event.target,'i-front',true);
+            this.renderer.setElementClass(event.target,'i-back',false);
+            this.renderer.setElementClass(event.target,'i-current',true);
+        }
+
+
         if(/photo-front/.test(_itsphoto.className)){
             this.detect();
             this.renderer.setElementClass(_itsphoto,'photo-front',false);
