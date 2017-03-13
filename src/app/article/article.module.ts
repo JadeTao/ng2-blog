@@ -1,6 +1,6 @@
 import { FormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core'
-import { RouterModule }   from '@angular/router'
+import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 
 import { ArticleListComponent } from './article-list/article-list.component'
@@ -11,14 +11,14 @@ import { ArticleRoutingModule } from './article-routing.module'
 
 @NgModule({
     imports: [
-        FormsModule,       
+        FormsModule,
         CommonModule,
         ArticleRoutingModule,
     ],
     declarations: [
         ArticleDetailComponent,
         ArticleListComponent,
-        ArticleMainComponent     
+        ArticleMainComponent
     ],
     exports: [ArticleMainComponent]
 })

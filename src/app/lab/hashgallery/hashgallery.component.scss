@@ -1,64 +1,55 @@
-@font-face{
-    font-family:'icons';
+@font-face {
+    font-family: 'icons';
     src: url(http://om1o3l1z1.bkt.clouddn.com/icons.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     padding: 0;
     margin: 0;
 }
-.gallery{
+
+.gallery {
     user-select: none;
     color: #555;
     background-color: #fff;
     height: 700px;
-    font-family:'Avenir Next','Lantinghei SC';
+    font-family: 'Avenir Next', 'Lantinghei SC';
     font-size: 14px;
     position: relative;
-    -webkit-font-smoothing:antialiased;
-    .wrap{
+    -webkit-font-smoothing: antialiased;
+    .wrap {
         width: 100%;
-        height: 900px;        
+        height: 900px;
         position: absolute;
         /*垂直居中*/
-        top:50%;
+        top: 50%;
         margin-top: -450px;
-
-        overflow: hidden;        
-
+        overflow: hidden;
         perspective: 1200px;
-
-
-                /*翻转*/
-
-        .photo{
+        /*翻转*/
+        .photo {
             transform-style: preserve-3d;
-
-            .photo-wrap{
+            .photo-wrap {
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 transform-style: preserve-3d;
-              //  transform-origin:0 0;
-                transition:all 1s ease-in-out;
-
-                .side-front{
+                //  transform-origin:0 0;
+                transition: all 1s ease-in-out;
+                .side-front {
                     transform: rotateY(0deg);
-
                 }
-                .side-back{
-                    transform:rotateY(180deg);
+                .side-back {
+                    transform: rotateY(180deg);
                 }
-                .side{
+                .side {
                     backface-visibility: hidden;
-                }               
-            }            
+                }
+            }
         }
-
-
-
-        .nav{
+        .nav {
             width: 80%;
             height: 30px;
             line-height: 30px;
@@ -67,7 +58,7 @@
             bottom: 130px;
             z-index: 99;
             text-align: center;
-            .i{
+            .i {
                 width: 35px;
                 height: 35px;
                 display: inline-block;
@@ -78,124 +69,110 @@
                 transform: scale(.4);
                 transition: all 1s;
             }
-            .i-current{
-              //  transform:scale(.7)!important;
-                transition:all .6s ease-in-out;
-              //  transform:scale(.8);            
+            .i-current {
+                //  transform:scale(.7)!important;
+                transition: all .6s ease-in-out;
+                //  transform:scale(.8);            
             }
-            .i-current:after{
-                content:'\e600';
+            .i-current:after {
+                content: '\e600';
                 font-family: 'icons';
-                font-size:80%;
+                font-size: 80%;
                 display: inline-block;
                 line-height: 35px;
                 text-align: center;
                 color: #fff;
                 vertical-align: 38%;
-                opacity:1;
+                opacity: 1;
             }
-            .i-front{
+            .i-front {
                 transform: rotateY(0deg)!important;
-                transition:all .6s ease-in-out;
-                transform:scale(.4);
-            }
-            .i-back{
-                transition:all .6s ease-in-out;
-                background: rgba(84, 84, 84, 0.8)!important;
-                transform:rotateY(-180deg);
-                background-color: #555;
-            }          
-        }
-
-            .photo{
-                width: 260px;
-                height: 320px;
-                position: absolute;
-                z-index:1;
-                box-shadow: 0 0 1px rgba(0, 0, 0, .01);
-                transition: all .6s;
-
-                cursor:pointer;
                 transition: all .6s ease-in-out;
-                left: 50%;top:50%;
-                margin-top:-160px;
-                margin-left: -130px;
-
-                .side{
-                    width: 100%;
-                    height: 100%;
-                    background-color: #eee;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    padding: 20px;
-                    box-sizing: border-box;
-                }
-
-                .side-front{
-                    .image{
-                        width: 100%;
-                        height: 250px;
-                        line-height: 250px;
-                        overflow: hidden;
-                    
-                        img{
-                            width: 100%;
-                        }
-                    }
-                    .caption{
-                        text-align: center;
-                        font-size: 16px;
-                        line-height: 50px;
-                    }
-                }
-                .side-back{ 
-                    .desc{
-                        color: #666;
-                        font-size:14px;
-                        line-height: 1.5em;
-                    }
-                }              
-        
-    }
-
-
-
-
-
-    }
-
-
-
-    .photo-center {
-            left: 50% !important;
-            top:50% !important;
-            transform: rotate(0deg) scale(1.2,1.2) !important;
-            margin-top:-160px !important;
-            margin-left: -130px !important;
-            z-index:99 !important;
-    }
-
-        .photo-front{
-            .photo-wrap{
-                transform: rotateY(0deg);
+                transform: scale(.4);
+            }
+            .i-back {
+                transition: all .6s ease-in-out;
+                background: rgba(84, 84, 84, 0.8)!important;
+                transform: rotateY(-180deg);
+                background-color: #555;
             }
         }
-        .photo-back{
-            .photo-wrap{
-                transform: rotateY(-180deg);
+        .photo {
+            width: 260px;
+            height: 320px;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 0 1px rgba(0, 0, 0, .01);
+            transition: all .6s;
+            cursor: pointer;
+            transition: all .6s ease-in-out;
+            left: 50%;
+            top: 50%;
+            margin-top: -160px;
+            margin-left: -130px;
+            .side {
+                width: 100%;
+                height: 100%;
+                background-color: #eee;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                box-sizing: border-box;
             }
-        }    
+            .side-front {
+                .image {
+                    width: 100%;
+                    height: 250px;
+                    line-height: 250px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .caption {
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 50px;
+                }
+            }
+            .side-back {
+                .desc {
+                    color: #666;
+                    font-size: 14px;
+                    line-height: 1.5em;
+                }
+            }
+        }
+    }
+    .photo-center {
+        left: 50% !important;
+        top: 50% !important;
+        transform: rotate(0deg) scale(1.2, 1.2) !important;
+        margin-top: -160px !important;
+        margin-left: -130px !important;
+        z-index: 99 !important;
+    }
+    .photo-front {
+        .photo-wrap {
+            transform: rotateY(0deg);
+        }
+    }
+    .photo-back {
+        .photo-wrap {
+            transform: rotateY(-180deg);
+        }
+    }
 }
 
-.photo-wrap{
-    pointer-events:none;
-    div{
-        pointer-events:none;
-        p{
-            pointer-events:none;
-            img{
-                pointer-events:none;
+.photo-wrap {
+    pointer-events: none;
+    div {
+        pointer-events: none;
+        p {
+            pointer-events: none;
+            img {
+                pointer-events: none;
             }
         }
     }
