@@ -64,17 +64,17 @@
             text-decoration: none;
         }
         a {
-            span {
-                text-align: center;
-                display: inline-block;
-                color: #FFFFFF;
-                border: solid 1px #FFFFFF;
-                font-size: 30px;
-                text-decoration: none;
-                margin-right: 20px;
-                margin-left: 20px;
-                width: 120px;
-            }
+            text-align: center;
+            display: inline-block;
+            color: #57D1C9;
+            background-color: #FFFFFF;
+            font-size: 20px;
+            text-decoration: none;
+            margin-right: 20px;
+            margin-left: 20px;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
         }
     }
 }
