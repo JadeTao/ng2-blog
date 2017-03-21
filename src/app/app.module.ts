@@ -5,8 +5,7 @@ import {NgModule} from '@angular/core'
 import {HttpModule} from '@angular/http'
 import {RouterModule} from '@angular/router'
 import {HashLocationStrategy, LocationStrategy} from '@angular/common'
-import { MaterialModule } from '@angular/material';
-import 'hammerjs';
+
 
 
 import { AppComponent } from './app.component';
@@ -29,7 +28,6 @@ import { AppRoutingModule } from './app-routing.module'
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
     FormsModule,
     HttpModule,
  //   ArticleModule,
