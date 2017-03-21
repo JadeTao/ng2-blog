@@ -1,80 +1,32 @@
-.headbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 400px;
-    background-color: #57D1C9;
-    box-shadow: 0 5px 15px #aaaaaa;
-    .self,
-    .img,
-    .mask,
-    .border {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-    }
-    .self {
-        position: relative;
-        display: block;
-    }
-    .img {
-        background-size: cover;
-    }
-    .mask,
-    .border {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-    .mask {
-        text-align: center;
-        transition: all .5s ease-in;
-    }
-    .info {
-        margin-top: 50%;
-        transform: translateY(-30%);
-        color: rgba(255, 255, 255, 0);
-        transition: all .5s ease-in;
-    }
-    .self:hover .mask {
-        background-color: rgba(0, 0, 0, .5);
-        color: rgba(255, 255, 255, 1);
-    }
-    .self:hover .border {
-        transform: rotate(180deg);
-    }
-    .self:hover .info {
-        color: rgba(255, 255, 255, 1);
-    }
-    span {
-        color: #FFFFFF;
-        font-size: 60px;
-    }
+.headbar { 
     nav {
-        margin-top: 20px;
-        position: relative;
-        display: flex;
-        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        background-color: #333;
+        box-shadow: 0 5px 5px #aaaaaa;
         a:hover,
         a:visited,
         a:visited,
         a:active {
             text-decoration: none;
         }
-        a {
+        a {     
+            margin-top: 5px;
             text-align: center;
             display: inline-block;
-            color: #57D1C9;
-            background-color: #FFFFFF;
-            font-size: 20px;
+            color: #FFFFFF;
             text-decoration: none;
-            margin-right: 20px;
-            margin-left: 20px;
             width: 120px;
-            height: 40px;
+            height: 100%;
             line-height: 40px;
+            transition: all 0.5s ease-in-out;
+
+            &:hover{
+                color:#F02A71;
+            }
+        }
+        .aboutme{
+
         }
     }
 }
