@@ -18,11 +18,13 @@ body {
     width: 100vw;
     overflow: hidden;
 } //上面四个样式用于消除scroll bar出现造成的页面跳动
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', 'Droid Sans Fallback', sans-serif;
 }
+
 
 app-root {
     display: flex;
@@ -46,6 +48,7 @@ app-root {
             而其他元素该属性值为0，因此不会得到多余的空间*/
         /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
         flex: 1 0 auto;
+        background-color: #F1F1F1;
     }
     article-list {
         flex: 1 0 auto;
@@ -62,26 +65,38 @@ app-root {
         flex: 0 0 auto;
         z-index: 100;
     }
-}
+    h1{
+        margin-bottom: 30px;
+    }
+    pre {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 90%;
+        background-color: #001011;
+        color: #FEFAEC;
+        border-radius: 5px;
+        padding: 10px 30px;
+    }
 
-//MD样式放在全局，放在子页面无效，可能由于动态渲染
-blockquote {
-    padding: 20px;
-    margin-bottom: 25px;
-    background-color: #f7f7f7;
-    border-left: 6px solid #b4b4b4;
-    word-break: break-word;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
-}
-
-pre {
-    background-color: #625772;
-    color: #FEFAEC;
-    border-radius: 5px;
-    padding: 10px 30px;
-    code {
+    pre code {
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        background-color: transparent;
+        border-radius: 0;
         font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
     }
+
+    blockquote {
+        padding: 20px;
+        margin-bottom: 25px;
+        background-color: #f7f7f7;
+        border-left: 6px solid #b4b4b4;
+        word-break: break-word;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+    }
 }
+
