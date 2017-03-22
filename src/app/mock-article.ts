@@ -1,7 +1,7 @@
 import { Detail } from './article/article-detail/detail'
 export var ARTICLES: Detail[] = [
 	{
-		id: 4, title: '阿里的一道编程测验', createdAt: '2017/3/10', tags: ['面试', '设计模式'], preview: '', content: `
+		id: 4, title: '阿里的一道编程测验', createdAt: '2017年3月10日', tags: ['面试', '设计模式'], preview: '', content: `
 前天投了阿里的暑期实习前端岗位，按流程我被要求做一道编程测验，题目如下
 ![这里](http://om1o3l1z1.bkt.clouddn.com/ali.png)
 当时限时30min，结点判定和递归方面没处理好，所以今天特地拿出时间整理了一下。
@@ -64,7 +64,7 @@ export var ARTICLES: Detail[] = [
 ###题外之话
 最近在看jQuery的源码和设计模式，心里一直觉得阿里的这道题有种设计模式的味道，但找来找去发现没有一种是贴切的。设计模式是抽象层的代码思想，没有足够的代码量实在无法驾驭，所以开始强迫自己写些东西，放到这个博客的lab里。第一个项目是将一个CSS3+原生JavaScript的散列画廊重构移植到NG框架里，一方面加深自己对NG的掌握，一方面有朝一日把它抽象成插件，贡献到NG社区，也算是对NG推广的微弱贡献吧。`}
 	, {
-		id: 3, title: 'Nodejs编程与异步控制', createdAt: '2017/3/5', tags: ['前端', 'NodeJS'], preview: '', content: `
+		id: 3, title: 'Nodejs编程与异步控制', createdAt: '2017年3月5日', tags: ['前端', 'NodeJS'], preview: '', content: `
 #### 前言：
 本文章的内容围绕我的这个项目展开,[Github地址](https://github.com/JadeTao/MarkDown-img-helper)。
 
@@ -139,7 +139,7 @@ Async提供了解决对集合的异步流程控制的有效解决方法——[As
 
 p.s.技术文章真的难写。`},
 	{
-		id: 2, title: '关于这个博客的一些说明', createdAt: '2017/2/28', tags: ['前端', 'angular'], preview: '', content: `
+		id: 2, title: '关于这个博客的一些说明', createdAt: '2017年2月28日', tags: ['前端', 'angular'], preview: '', content: `
 ### 基本介绍
 这是一个基于Angular JS 2.0+的单页应用(SPA)。
 >####亮点
@@ -170,7 +170,7 @@ p.s.技术文章真的难写。`},
 
 `},
 	{
-		id: 1, title: '走过秋天的一刻钟', createdAt: '2017/2/14', tags: ['随笔', '杂志'], preview: '', content:
+		id: 1, title: '走过秋天的一刻钟', createdAt: '2017年2月14日', tags: ['随笔', '杂志'], preview: '', content:
 			`错过第一台车不是我们的错，隔着校门我们看着七路车缓缓驶过。第二台车停站的时候我们没有挤上去。然后我们望着远处的松树等待第三台车的到来。一阵微风过后月亮突然浮现在我们身后的天边，两侧的路灯骤然亮起。
 
 “还是走着回去吧。”我提议道。
