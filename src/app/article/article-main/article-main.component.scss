@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    background-color: #f5f7f9;
+    .menu{
+        margin-right: 5%;
+        position: relative;
+    }
+
+    app-article-list{
+        width:800px;
+        position: relative;
+    }
+    app-article-detail{
+        width:800px;
+        position: relative;
+    }
+}
