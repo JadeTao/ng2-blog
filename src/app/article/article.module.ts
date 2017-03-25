@@ -8,6 +8,7 @@ import 'hammerjs';
 import { ArticleListComponent } from './article-list/article-list.component'
 import { ArticleDetailComponent } from './article-detail/article-detail.component'
 import { ArticleMainComponent } from './article-main/article-main.component'
+import { ArticleMenuComponent } from './article-menu/article-menu.component'
 
 import { ArticleRoutingModule } from './article-routing.module'
 
@@ -19,6 +20,7 @@ import { ArticleRoutingModule } from './article-routing.module'
         ArticleRoutingModule,
     ],
     declarations: [
+        ArticleMenuComponent,
         ArticleDetailComponent,
         ArticleListComponent,
         ArticleMainComponent
