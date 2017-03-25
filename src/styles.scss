@@ -22,19 +22,20 @@ body {
 body {
     margin: 0;
     padding: 0;
+    font-size:16px;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', 'Droid Sans Fallback', sans-serif;
 }
 
 
 app-root {
-    display: flex;
-    flex-direction: column;
+    display: static;
     height: 100%;
     min-height: 100vh;
+
     lab-main {
         a {
             position: relative;
-            z-index: 100000;
+            z-index: 999;
         }
     }
     headbar {
@@ -58,6 +59,14 @@ app-root {
     }
     lab-main {
         flex: 1 0 auto;
+    }
+    app-article-list{
+        width:800px;
+        position: relative;
+    }
+    app-article-detail{
+        width:800px;
+        position: relative;
     }
     footbar {
         /* 和 header 一样，footer 也采用固定高度*/
