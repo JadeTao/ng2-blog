@@ -23,6 +23,9 @@ export class ArticleDetailComponent implements OnInit {
 
     private article: Detail;
     private content: any;
+    goBack(){
+        this.location.back();
+    }
     ngOnInit(){
        this.route.params
             .switchMap((params: Params) => this.detailService.getDetail(+params['id']))

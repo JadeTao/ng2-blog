@@ -1,6 +1,6 @@
-<div class="article-detail">
-    <div *ngIf="article" class="container">
+
+    <div *ngIf="article" class="article-detail" >
+        <span (click)="goBack()" class="back">Back</span>
         <h1>{{article.title}}</h1>
         <div [innerHTML]="content" class="content"></div>
     </div>
-</div>
