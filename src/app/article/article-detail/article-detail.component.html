@@ -1,6 +1,5 @@
-<div class="article-detail">
-    <div *ngIf="article" class="container">
-        <h1>{{article.title}}</h1>
-        <div [innerHTML]="content" class="content"></div>
-    </div>
+<div *ngIf="article" class="article-detail">
+    <span (click)="goBack()" class="back"><i class="fa fa-mail-reply"></i>返回</span>
+    <h1>{{article.title}}</h1>
+    <div [innerHTML]="content" class="content"></div>
 </div>

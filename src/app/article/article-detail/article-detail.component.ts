@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core'
-import { ActivatedRoute, Params }   from '@angular/router'
-import { Location }                 from '@angular/common'
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute, Params } from '@angular/router'
+import { Location } from '@angular/common'
 import 'rxjs/add/operator/switchMap';
 
-import {ArticleService} from '../article.service'
-import {Detail} from './detail'
+import { ArticleService } from '../article.service'
+import { Detail } from './detail'
 
 @Component({
-    moduleId:module.id,
-    selector: 'app-article-detail',
+    moduleId: module.id,
+    selector: 'article-detail',
     templateUrl: './article-detail.component.html',
     styleUrls: ['./article-detail.component.scss'],
     providers: [ArticleService]
@@ -19,16 +19,20 @@ export class ArticleDetailComponent implements OnInit {
         private detailService: ArticleService,
         private route: ActivatedRoute,
         private location: Location
-    ) {}
+    ) { }
 
     private article: Detail;
     private content: any;
-    ngOnInit(){
-       this.route.params
+    goBack() {
+        this.location.back();
+    }
+    ngOnInit() {
+        this.route.params
             .switchMap((params: Params) => this.detailService.getDetail(+params['id']))
-            .subscribe((article:Detail) => {
+            .subscribe((article: Detail) => {
                 this.article = article;
-                this.content=this.detailService.converter.makeHtml(this.article.content); });       
+                this.content = this.detailService.converter.makeHtml(this.article.content);
+            });
     }
 
 }

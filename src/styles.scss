@@ -17,21 +17,21 @@ html {
 body {
     width: 100vw;
     overflow: hidden;
-} //上面四个样式用于消除scroll bar出现造成的页面跳动
+}
 
+//上面四个样式用于消除scroll bar出现造成的页面跳动
 body {
     margin: 0;
     padding: 0;
-    font-size:16px;
+    font-size: 16px;
+    background-color: #FAFAFA;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', 'Droid Sans Fallback', sans-serif;
 }
-
 
 app-root {
     display: static;
     height: 100%;
     min-height: 100vh;
-
     lab-main {
         a {
             position: relative;
@@ -51,22 +51,62 @@ app-root {
         flex: 1 0 auto;
         background-color: #F1F1F1;
     }
-    article-list {
-        flex: 1 0 auto;
-    }
-    article-detail {
-        flex: 1 0 auto;
+    article-main {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        article-list {
+            //   flex: 1 0 auto;
+            width: 66%;
+            position: relative;
+            margin-left:50px;
+        }
+        article-detail {
+            //   flex: 1 0 auto;
+            width: 66%;
+            margin-left:50px;
+            position: relative;
+            h1 {
+                margin-bottom: 30px;
+            }
+            pre {
+                display: block;
+                margin-top: 0;
+                margin-bottom: 1rem;
+                font-size: 90%;
+                background-color: #001011;
+                color: #FEFAEC;
+                border-radius: 5px;
+                padding: 10px 30px;
+            }
+            pre code {
+                padding: 0;
+                font-size: inherit;
+                color: inherit;
+                background-color: transparent;
+                border-radius: 0;
+                font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+            }
+            blockquote {
+                padding: 20px;
+                margin-bottom: 25px;
+                background-color: #f7f7f7;
+                border-left: 6px solid #b4b4b4;
+                word-break: break-word;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 30px;
+            }
+            img {
+                display: block;
+                overflow: hidden;
+                width: 100%;
+            }
+        }
     }
     lab-main {
         flex: 1 0 auto;
-    }
-    app-article-list{
-        width:800px;
-        position: relative;
-    }
-    app-article-detail{
-        width:800px;
-        position: relative;
     }
     footbar {
         /* 和 header 一样，footer 也采用固定高度*/
@@ -74,38 +114,4 @@ app-root {
         flex: 0 0 auto;
         z-index: 100;
     }
-    h1{
-        margin-bottom: 30px;
-    }
-    pre {
-        display: block;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-size: 90%;
-        background-color: #001011;
-        color: #FEFAEC;
-        border-radius: 5px;
-        padding: 10px 30px;
-    }
-
-    pre code {
-        padding: 0;
-        font-size: inherit;
-        color: inherit;
-        background-color: transparent;
-        border-radius: 0;
-        font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-    }
-
-    blockquote {
-        padding: 20px;
-        margin-bottom: 25px;
-        background-color: #f7f7f7;
-        border-left: 6px solid #b4b4b4;
-        word-break: break-word;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 30px;
-    }
 }
-
