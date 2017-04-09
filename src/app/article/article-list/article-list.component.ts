@@ -4,7 +4,7 @@ import {Detail} from '../article-detail/detail'
 import {ArticleService} from '../article.service'
 
 @Component({
-    selector: 'app-article-list',
+    selector: 'article-list',
     templateUrl: './article-list.component.html',
     styleUrls: ['./article-list.component.scss'],
     providers: [ArticleService]
