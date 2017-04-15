@@ -6,7 +6,6 @@ import { IMG } from './mock-img'
 
 
 @Component({
-    moduleId:module.id,
     selector: 'hashgallery',
     templateUrl: './hashgallery.component.html',
     styleUrls: ['./hashgallery.component.scss'],
