@@ -1,5 +1,12 @@
 /* global styles*/
 
+@import "~@angular-mdl/core/scss/color-definitions";
+$color-primary: $palette-blue-500;
+$color-primary-dark: $palette-blue-700;
+$color-accent: $palette-amber-A200;
+$color-primary-contrast: $color-dark-contrast;
+$color-accent-contrast: $color-dark-contrast;
+@import '~@angular-mdl/core/scss/material-design-lite';
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -38,19 +45,7 @@ app-root {
             z-index: 999;
         }
     }
-    headbar {
-        /* 采用固定的高度，只占用必须的空间 */
-        /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-        flex: 0 0 auto;
-        z-index: 10;
-    }
-    intro {
-        /* 将 flex-grow 设置为1，该元素会占用所有的可使用空间
-            而其他元素该属性值为0，因此不会得到多余的空间*/
-        /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
-        flex: 1 0 auto;
-        background-color: #F1F1F1;
-    }
+    index {}
     article-main {
         margin-top: 20px;
         display: flex;
@@ -60,12 +55,12 @@ app-root {
             //   flex: 1 0 auto;
             width: 66%;
             position: relative;
-            margin-left:50px;
+            margin-left: 50px;
         }
         article-detail {
             //   flex: 1 0 auto;
             width: 66%;
-            margin-left:50px;
+            margin-left: 50px;
             position: relative;
             h1 {
                 margin-bottom: 30px;
