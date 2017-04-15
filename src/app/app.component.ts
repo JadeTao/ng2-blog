@@ -1,6 +1,4 @@
-import { Component,Input } from '@angular/core';
-
-import { Detail } from './article/article-detail/detail'
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +6,5 @@ import { Detail } from './article/article-detail/detail'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+  constructor() { }
 }
