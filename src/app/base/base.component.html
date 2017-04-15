@@ -1,0 +1,29 @@
+<div class="app-container" [ngStyle]="{'background-color': color.value}">
+    <div class="demo-container demo-layout-transparent">
+        <mdl-layout #mdlLayout1="mdlLayout">
+            <mdl-layout-header mdl-layout-header-transparent>
+                <mdl-layout-header-row>
+                    <mdl-layout-title>Welcome</mdl-layout-title>
+                    <mdl-layout-spacer></mdl-layout-spacer>
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" [routerLink]="['/']">首页</a>
+                        <a class="mdl-navigation__link" [routerLink]="['/layout/l2']">关于</a>
+                    </nav>
+                </mdl-layout-header-row>
+            </mdl-layout-header>
+            <mdl-layout-drawer>
+                <mdl-layout-title>Menu</mdl-layout-title>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">文章</a>
+                    <a class="mdl-navigation__link" [routerLink]="['/layout/l2']" (click)="mdlLayout1.closeDrawer()">实验室</a>
+                    <a class="mdl-navigation__link" [routerLink]="['/layout/l3']" (click)="mdlLayout1.closeDrawer()">收藏夹</a>
+                </nav>
+            </mdl-layout-drawer>
+            <mdl-layout-content>
+                <router-outlet name="preview"></router-outlet>
+            </mdl-layout-content>
+        </mdl-layout>
+    </div>
+    <div class="texture"></div>
+    <span id="png" [ngStyle]="{'background-image': 'url('+color.url+')'}"></span>
+</div>
