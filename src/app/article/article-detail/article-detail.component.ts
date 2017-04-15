@@ -4,10 +4,9 @@ import { Location } from '@angular/common'
 import 'rxjs/add/operator/switchMap';
 
 import { ArticleService } from '../article.service'
-import { Detail } from './detail'
+import { Detail } from '../../static/entitis'
 
 @Component({
-    moduleId: module.id,
     selector: 'article-detail',
     templateUrl: './article-detail.component.html',
     styleUrls: ['./article-detail.component.scss'],

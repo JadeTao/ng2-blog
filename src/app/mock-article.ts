@@ -1,4 +1,4 @@
-import { Detail } from './article/article-detail/detail'
+import { Detail } from './static/entitis'
 export var ARTICLES: Detail[] = [
 	{
 		id: 4, title: '阿里的一道编程测验', createdAt: '2017年3月10日', tags: ['面试', '设计模式'], preview: '', content: `

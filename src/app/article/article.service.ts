@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http'
 
-import {Detail} from '../article/article-detail/detail'
+import {Detail} from '../static/entitis'
 import {ARTICLES} from '../mock-article'
 
-const Showdown:any = require('showdown')
+import * as Showdown from 'showdown'
 
 
 @Injectable()

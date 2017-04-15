@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 
-import {Detail} from '../article-detail/detail'
+import {Detail} from '../../static/entitis'
 import {ArticleService} from '../article.service'
 
 @Component({

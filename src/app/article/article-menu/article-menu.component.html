@@ -3,16 +3,16 @@
     <a><i class="fa fa-server"></i>总览</a>
     <a><i class="fa fa-tag"></i>标签</a>
     <a><i class="fa fa-folder"></i>归档</a>
-    <a (click)="isVisible = !isVisible"><i class="fa fa-key"></i>发表</a>
+    <a (click)="isVisible = !isVisible" (click)="toLoad()"><i class="fa fa-key"></i>发表</a>
 </div>
 <div class="wrapper" [style.display]="isVisible ? 'flex' : 'none'">
     <div class="verify">
-        <div class="tip">请输入密码</div>
+        <div class="tip">{{tip}}</div>
         <input type="password" placeholder="contact admin for password" id="pwd" />
-        <div [style.visibility]="visi">{{tip}}</div>
+       
         <div class="button">
-            <button (click)="toCheck($event)" >确定</button>
-            <button (click)="isVisible = !isVisible">取消</button>
+            <button (click)="toCheck()">确定</button>
+            <button (click)="isVisible = !isVisible" (click)="toClear()">取消</button>
         </div>
     </div>
 </div>

@@ -15,18 +15,24 @@ export class ArticleMenuComponent implements OnInit {
         private el: ElementRef
     ) { }
 
-    private tip: string
-    private visi: string = "hidden"
-    toCheck($event) {
-        let pwd = this.el.nativeElement.querySelector('#pwd').value;
-        if (this.pwdCheck.checkpwd(pwd)) {
+    private tip: string = "请输入密码"
+
+    private password: string
+    toLoad() {
+        this.pwdCheck.loadPwd();
+    }
+    toCheck() {
+        this.password = this.el.nativeElement.querySelector('#pwd').value;
+        if (this.pwdCheck.checkPwd(this.password)) {
             this.tip = "welcome";
-            this.visi = "visible";
+
         } else {
             this.tip = "wrong";
-            this.visi = "visible";
         }
-        console.log(pwd);
+    }
+    toClear() {
+        this.tip = "请输入密码";
+        this.el.nativeElement.querySelector('#pwd').value = "";
     }
 
 
