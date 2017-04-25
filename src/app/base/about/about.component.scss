@@ -1,0 +1,60 @@
+.wrapper {
+    position: relative;
+    height: 400px;
+    width: 600px;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    .body{
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .head {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        button {
+            font-size: 18px;
+            width: 50%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            height: 70px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #CCC;
+        }
+        .bottom::after {
+            height: 4px;
+            widows: 100%;
+            display: block;
+            content: " ";
+            bottom: 0px;
+            left: 0px;
+            position: absolute;
+            background: rgb(33, 150, 243);
+            animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
+            transition: all 1s cubic-bezier(0.4, 0, 1, 1);
+        }
+    }
+    .github {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-image: url("http://om1o3l1z1.bkt.clouddn.com/github1.svg");
+        background-size: 100% 100%;
+        cursor: pointer;
+        transition: all 0.8s ease;
+        &:hover {
+            background-image: url("http://om1o3l1z1.bkt.clouddn.com/github2.svg");
+            background-size: 100% 100%;
+        }
+    }
+}

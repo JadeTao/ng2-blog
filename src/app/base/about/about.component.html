@@ -1,0 +1,78 @@
+<div class="wrapper">
+    <div class="head">
+        <button mdl-button mdl-ripple mdl-colored="primary" class="blog" (click)="changeTab(0)"><mdl-icon>account_balance</mdl-icon>关于博客</button>
+        <button mdl-button mdl-ripple mdl-colored="primary" class="self" (click)="changeTab(1)"><mdl-icon>account_circle</mdl-icon>关于我</button>
+    </div>
+    <div class="body body0" *ngIf="tab.tab0">
+        <a target="_blank" href="https://github.com/JadeTao">
+            <div class="github"></div>
+        </a>
+        <span>博客github</span>
+        <mdl-list>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>Angular</span>
+                        <span>, framework for SPA</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>Express</span>
+                        <span>, Node.js web server</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>Google Font API</span>
+                        <span>, material design</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+        </mdl-list>
+
+
+    </div>
+    <div class="body body1" *ngIf="tab.tab1">
+        <a target="_blank" href="https://github.com/JadeTao/ng2-blog">
+            <div class="github"></div>
+        </a>
+        <span>个人github</span>
+        <mdl-list>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>18年应届</span>
+                        <span>, 本科材料，已转前端</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>Plain JS</span>
+                        <span>, 默默研究原生JS</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+            <mdl-list-item>
+                <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-icon>flag</mdl-icon>
+                    <div class="content">
+                        <span>新技术</span>
+                        <span>, 入坑Angular中</span>
+                    </div>
+                </mdl-list-item-primary-content>
+            </mdl-list-item>
+        </mdl-list>
+    </div>
+</div>
