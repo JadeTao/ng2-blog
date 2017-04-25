@@ -1,0 +1,10 @@
+<div>
+    <div class="container" *ngFor="let item of list ">
+        <a class="title" [routerLink]="[item.route]" onclick="document.getElementsByClassName('mdl-layout--fixed-header')[0].scrollTop=0">
+            <mdl-icon [ngStyle]="{'font-size':'34px','width':'34px','height':'34px'}">{{item.icon}}</mdl-icon>
+            <h3>  {{item.title}}</h3>
+        </a>
+        <article class="desc">{{item.desc}}</article>
+        <hr>
+    </div>
+</div>
