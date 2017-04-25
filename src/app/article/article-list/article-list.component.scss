@@ -1,11 +1,17 @@
+div {
+    width: 100%;
+    margin-top: 30px;
     .container {
         background-color: #ffffff;
-        width: 100%;
+        width: 70%;
         display: flex;
+        margin: 0 auto;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         box-shadow: 3px 3px 4px #aaaaaa;
-        h1 {
+        padding-top: 20px;
+        h3 {
             margin-bottom: 10px;
             color: #555;
             text-align: center;
@@ -19,26 +25,60 @@
         }
         hr {
             opacity: 0.3;
-            margin-top: 20px;
-            margin-bottom: 50px;
+            margin: 20px auto 50px auto;
             width: 70%;
         }
         .title {
-            transition: all .3s ease-in-out
+            transition: all .3s ease-in-out;
+            position: relative;
+            &::after {
+                content: ' ';
+                height: 4px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                opacity: 0;
+                display: block;
+            }
         }
         .title:hover {
             color: #F03861;
+            &::after {
+                content: ' ';
+                height: 4px;
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 100%;
+                display: block;
+                background: #F03861;
+                animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
+                transition: all .3s cubic-bezier(0.4, 0, 1, 1);
+            }
         }
         .stamp {
             font-size: 14px;
             margin-top: 2%;
             margin-bottom: 5%;
             text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
             .date {
                 margin: 0px 8px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
             }
             .tag-wrapper {
-                margin-top: 10px;
+                margin: 0px 8px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 .tag {
                     transition: all .3s ease-in-out;
                     margin-right: 5px;
@@ -50,7 +90,6 @@
             }
         }
     }
-    
     article {
         padding: 15px;
         max-height: 200px;
@@ -59,4 +98,6 @@
         word-break: break-all;
         line-height: 200%;
         margin: 0 40px;
+        text-indent: 30px;
     }
+}

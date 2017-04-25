@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { Detail } from '../../static/entitis'
+import { ArticleService } from '../article.service'
 
-import {Detail} from '../../static/entitis'
-import {ArticleService} from '../article.service'
 
 @Component({
     selector: 'article-list',
@@ -13,17 +13,19 @@ export class ArticleListComponent implements OnInit {
 
     constructor(
         private listService: ArticleService,
-    ) {}
+    ) { }
 
     private list: Detail[]
-    scroll(){
-        window.scrollTo(0,0);
+    private div: HTMLElement
+    scroll() {        
+        
     }
 
     ngOnInit() {
-       this.list=this.listService.getList();
-       for( let n of this.list ){
-           n.preview = n.content.replace(/\#+/g,"").replace(/\>+/g,"").replace(/\((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?\)/g,'').slice(0,200)         //正则提取汉字，提取预览
-       }
+        this.list = this.listService.getList();
+        for (let n of this.list) {
+            n.preview = n.content.replace(/\#+/g, "").replace(/\>+/g, "").replace(/\((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?\)/g, '').slice(0, 200)         //正则提取汉字，提取预览
+        }
+
     }
 }
