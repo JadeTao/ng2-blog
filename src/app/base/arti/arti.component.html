@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <mdl-list>
+        <mdl-list-item *ngFor="let item of list">
+            <mdl-list-item-primary-content>
+                <a [routerLink]="['/article/detail',item.id]">
+                    <button id="title" mdl-button mdl-ripple [ngStyle]="{'font-size':'20px'}">
+                    <mdl-icon mdl-list-item-icon>filter_{{item.id}}</mdl-icon>
+                    {{item.title}}
+                    </button>
+                </a>
+            </mdl-list-item-primary-content>
+        </mdl-list-item>
+    </mdl-list>
+    <a [routerLink]="['/article']">
+        <button mdl-button mdl-ripple [ngStyle]="{'font-size':'12px','color':'#475762'}">
+            view all
+        </button>
+    </a>
+</div>
