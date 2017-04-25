@@ -9,7 +9,7 @@ import { Color } from '../static/entitis'
 })
 export class BaseComponent implements OnInit {
 
- base: string = "http://om1o3l1z1.bkt.clouddn.com/"
+  base: string = "http://om1o3l1z1.bkt.clouddn.com/"
   colors: Color[] = [
     { value: "#F8C3CD", name: "退红", url: this.base + "F8C3CD.png" },
     { value: "#E83015", name: "猩猩绯", url: this.base + "E83015.png" },
@@ -38,33 +38,54 @@ export class BaseComponent implements OnInit {
     { value: "#2EA9DF", name: "露草", url: this.base + "2EA9DF.png" }
   ]
   color: Color
+  colorChange: any = null
+  colorTip: string = 'hdr_strong'
+  cssSet: any = {
+    'transform': 'rotate(0deg)',
+    'transition':'transform 0.8s ease'
+  }
 
   constructor() { }
 
-  rotateColor(args: any) {
-    if (args !== "stop") {
-      const length = args.length
-      const time = 6500
-      var colorChange = setInterval(() => {
-        this.color = this.colors[Math.floor(Math.random() * length)]
-      }, time)
-    } else{
-      clearInterval(colorChange)
-      console.log("stop")
+  changeCss() {
+    if (this.cssSet['transform'] === 'rotate(0deg)') {
+      this.cssSet['transform'] = 'rotate(180deg)'
+    } else {
+      this.cssSet['transform'] = 'rotate(0deg)'
     }
-
   }
 
-  tem(){
-    console.log('temp')
+  changeTip() {
+    if (this.colorTip === "hdr_strong") {
+      this.colorTip = "hdr_weak"
+    } else {
+      this.colorTip = "hdr_strong"
+    }
   }
 
-  getRandom(length) {
+
+  rotateColor() {
+    if (!this.colorChange) {
+      const length = this.colors.length
+      const time = 6500
+      this.colorChange = setInterval(() => {
+        this.color = this.colors[this.getRandom(this.colors.length)]
+      }, time)
+    } else {
+      if (!!this.colorChange) {
+        clearInterval(this.colorChange)
+        this.colorChange = null
+      }
+    }
+  }
+
+
+  getRandom(length: number): number {
     return Math.floor(Math.random() * length)
   }
 
   ngOnInit() {
-    this.rotateColor(this.colors)
+    this.rotateColor()
     this.color = this.colors[this.getRandom(this.colors.length)]
   }
 }

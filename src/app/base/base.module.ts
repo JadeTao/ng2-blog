@@ -4,16 +4,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from './base.component';
 import { IntroComponent } from './intro/intro.component';
+import { ArtiComponent } from './arti/arti.component';
+import { AboutComponent } from './about/about.component';
+
 
 
 
 
 @NgModule({
   imports: [
-    CommonModule, BaseRoutes, MdlModule
+    CommonModule, 
+    BaseRoutes, 
+    MdlModule
   ],
-  declarations: [BaseComponent,
-    IntroComponent
-  ]
+  declarations: [
+    BaseComponent,
+    IntroComponent,
+    ArtiComponent,
+    AboutComponent,
+]
 })
 export class BaseModule { }

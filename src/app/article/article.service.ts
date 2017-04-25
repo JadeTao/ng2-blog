@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http'
 
 import {Detail} from '../static/entitis'
-import {ARTICLES} from '../mock-article'
+import {ARTICLES} from '../static/mock-article'
 
 import * as Showdown from 'showdown'
 

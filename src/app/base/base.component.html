@@ -1,26 +1,28 @@
 <div class="app-container" [ngStyle]="{'background-color': color.value}">
-    <div class="demo-container demo-layout-transparent">
+    <div class="demo-layout-transparent">
         <mdl-layout #mdlLayout1="mdlLayout">
-            <mdl-layout-header mdl-layout-header-transparent>
+            <mdl-layout-header mdl-layout-header-transparent mdl-layout-mode="scroll">
                 <mdl-layout-header-row>
-                    <mdl-layout-title>Welcome</mdl-layout-title>
+                    <mdl-layout-title [ngStyle]="{'cursor':'default'}">Welcome</mdl-layout-title>
+                    <mdl-layout-title><button mdl-button mdl-ripple (click)="rotateColor();changeCss()" [ngStyle]="{'color':'#FFFFFF'}">选定色卡<mdl-icon [ngStyle]="cssSet" >{{colorTip}}</mdl-icon>滚动色卡</button></mdl-layout-title>
                     <mdl-layout-spacer></mdl-layout-spacer>
                     <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link" [routerLink]="['/']">首页</a>
-                        <a class="mdl-navigation__link" [routerLink]="['/layout/l2']">关于</a>
+                        <a class="mdl-navigation__link" [routerLink]="['/']"><button mdl-button mdl-ripple [ngStyle]="{'color':'#FFFFFF'}">首页</button></a>
+                        <a class="mdl-navigation__link" [routerLink]="['/home/article']"><button mdl-button mdl-ripple [ngStyle]="{'color':'#FFFFFF'}">文章</button></a>
+                        <a class="mdl-navigation__link" [routerLink]="['/home/about']"><button mdl-button mdl-ripple [ngStyle]="{'color':'#FFFFFF'}">关于</button></a>
                     </nav>
                 </mdl-layout-header-row>
             </mdl-layout-header>
             <mdl-layout-drawer>
                 <mdl-layout-title>Menu</mdl-layout-title>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">文章</a>
-                    <a class="mdl-navigation__link" [routerLink]="['/layout/l2']" (click)="mdlLayout1.closeDrawer()">实验室</a>
-                    <a class="mdl-navigation__link" [routerLink]="['/layout/l3']" (click)="mdlLayout1.closeDrawer()">收藏夹</a>
+                    <a class="mdl-navigation__link" [routerLink]="['/article']" (click)="mdlLayout1.closeDrawer()">文章</a>
+                    <a class="mdl-navigation__link" [routerLink]="['/lab']" (click)="mdlLayout1.closeDrawer()">实验室</a>
+                    <a class="mdl-navigation__link" [routerLink]="['/lab']" (click)="mdlLayout1.closeDrawer()">收藏夹</a>
                 </nav>
             </mdl-layout-drawer>
             <mdl-layout-content>
-                <router-outlet name="preview"></router-outlet>
+                <router-outlet></router-outlet>
             </mdl-layout-content>
         </mdl-layout>
     </div>
