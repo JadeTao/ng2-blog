@@ -1,0 +1,25 @@
+<div class="demo-container" mdl-shadow="2">
+    <mdl-layout #mdlLayout1="mdlLayout" mdl-layout-fixed-header mdl-layout-header-seamed mdl-layout-mode="scroll">
+        <mdl-layout-header>
+            <mdl-layout-header-row>
+                <mdl-layout-title [ngStyle]="{'cursor':'default'}">实验室</mdl-layout-title>
+                <mdl-layout-spacer></mdl-layout-spacer>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" [routerLink]="['/']"><button mdl-button mdl-ripple [ngStyle]="{'color':'#FFFFFF'}">首页</button></a>
+                    <a class="mdl-navigation__link" [routerLink]="['/lab']"><button mdl-button mdl-ripple [ngStyle]="{'color':'#FFFFFF'}">列表</button></a>
+                </nav>
+            </mdl-layout-header-row>
+        </mdl-layout-header>
+        <mdl-layout-drawer>
+            <mdl-layout-title>Menu</mdl-layout-title>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" [routerLink]="['/article']" (click)="mdlLayout1.closeDrawer()">文章</a>
+                <a class="mdl-navigation__link" [routerLink]="['/lab']" (click)="mdlLayout1.closeDrawer()">实验室</a>
+                <a class="mdl-navigation__link" [routerLink]="['/collect']" (click)="mdlLayout1.closeDrawer()">收藏夹</a>
+            </nav>
+        </mdl-layout-drawer>
+        <mdl-layout-content>
+            <router-outlet></router-outlet>
+        </mdl-layout-content>
+    </mdl-layout>
+</div>
