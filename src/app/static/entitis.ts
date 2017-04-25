@@ -2,14 +2,13 @@
  * @Author: jader 
  * @Date: 2017-04-13 20:26:41 
  * @Last Modified by: jader
- * @Last Modified time: 2017-04-13 20:31:18
+ * @Last Modified time: 2017-04-25 22:01:44
  */
-export class Detail {
+export interface Detail {
   id: number
   title: string
   createdAt: string
   tags: string[]
-  // readTotal:number
   content: string
   preview: string
 }
@@ -23,4 +22,28 @@ export interface Color {
   value: string
   name: string
   url: string
+}
+
+export interface Img {
+  id: number
+  src: string
+  title: string
+  caption: string
+  desc: string
+}
+
+export interface Lab {
+  id: number
+  title: string
+  icon: string
+  route: string
+  desc: string
+}
+
+export interface Site {
+  id: number
+  title: string
+  photo: string
+  url: string
+  desc: string
 }
