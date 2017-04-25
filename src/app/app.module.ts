@@ -1,3 +1,4 @@
+import { LabModule } from './../../lab/lab.module';
 import { BaseModule } from './base/base.module';
 
 import { BrowserModule } from '@angular/platform-browser'
@@ -9,19 +10,18 @@ import { RouterModule } from '@angular/router'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 import { AppComponent } from './app.component'
-import { HeadbarComponent } from './headbar/headbar.component'
 import { IndexComponent } from './index/index.component'
-import { FootbarComponent } from './footbar/footbar.component'
 import { AppRoutingModule } from './app-routing.module'
 import { MdlModule } from '@angular-mdl/core'
+import { CollectComponent } from './collect/collect.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeadbarComponent,
     IndexComponent,
-    FootbarComponent,
+    CollectComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,8 @@ import { MdlModule } from '@angular-mdl/core'
     HttpModule,
     MdlModule,
     AppRoutingModule,
-    BaseModule
+    BaseModule,
+    LabModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
