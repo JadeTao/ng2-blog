@@ -20,18 +20,19 @@ export class ArticleDetailComponent implements OnInit {
         private location: Location
     ) { }
 
-    private article: Detail;
-    private content: any;
+    private article: Detail
+    private content: any
     goBack() {
-        this.location.back();
+        this.location.back()
     }
     ngOnInit() {
         this.route.params
             .switchMap((params: Params) => this.detailService.getDetail(+params['id']))
             .subscribe((article: Detail) => {
-                this.article = article;
-                this.content = this.detailService.converter.makeHtml(this.article.content);
-            });
+                this.article = article
+                this.content = this.detailService.converter.makeHtml(this.article.content)
+            })
+
     }
 
 }
