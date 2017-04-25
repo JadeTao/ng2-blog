@@ -1,3 +1,5 @@
+import { AboutComponent } from './about/about.component';
+import { ArtiComponent } from './arti/arti.component';
 import { BaseComponent } from './base.component';
 import { IntroComponent } from './intro/intro.component';
 
@@ -10,7 +12,11 @@ const routes: Routes = [
     component: BaseComponent,
     children: [
       {
-        path: '', component: IntroComponent, outlet: 'preview'
+        path: '', component: IntroComponent,
+      }, {
+        path: 'article', component: ArtiComponent,
+      }, {
+        path: 'about', component: AboutComponent
       }]
   }
 ]
