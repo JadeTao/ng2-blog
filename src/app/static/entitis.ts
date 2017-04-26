@@ -43,7 +43,8 @@ export interface Lab {
 export interface Site {
   id: number
   title: string
-  photo: string
+  height: string
+  photo: string  
   url: string
   desc: string
 }
