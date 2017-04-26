@@ -1,8 +1,127 @@
 import { Detail } from './entitis'
 export let ARTICLES: Detail[] = [
 	{
+		id: 6, title: '深复制、浅复制以及Immutable初窥', createdAt: '2017年4月20日', tags: ['原生', 'jQuery'], preview: '', content: `### 堆(heap)和栈(stack)
+JavaScript的数据类型分为原始数据类型和引用数据类型，原始数据类型有number、string、null、undefined、boolean和symbol(ES6)，储存在栈内存中；引用数据类型有function、object、array，储存在堆内存中。此外，堆内存中还储存着引用数据类型的引用变量。       
+原始数据类型之间的传递是**传值**的，引用数据类型之间的传递是**传址**的。用简单的代码说明一下：
+
+
+	let pri_1 = 1       //在栈内存中创建一块区域保存pri_1，其只为1
+	let pri_2 = pri_1   //在栈内存中创建一块区域保存pri_2，
+	                    //将pri_1的值传给它
+	pri_1 += 1          //pri值增加
+	console.log(pri_1)  //2
+	console.log(pri_2)  //1，此时pri_2与pri_1无关，两个各有自己的值
+
+	let ref_1 = {}        //在堆内存中创建一块区域保存空对象，
+	                      //在栈内存中创建一块区域保存这个空对象的引用
+	                      //此时ref_1保存这这个空对象的地址
+	let ref_2 = ref_1     //在栈内存中创建一块区域保存ref_2,
+	                      //将ref_1保存的地址传递给它,
+	                      //此时两者指向同一个地址
+	ref_1.prop = "normal" //为空对象新增一个属性
+	console.log(ref_1.a)  //"normal"
+	console.log(ref_2.a)  //"normal"很明显看出ref_1和ref_2指向相同
+			
+
+### 深复制和浅复制
+在实际编程过程中，比如说状态管理时，我们需要获得引用数据类型的一份拷贝，如何实现呢？
+我们先定义一个对象mainStream，用来储存状态及变化，对象subStream是mainStream某一时刻的切片，下面讨论几种方法获取subStream
+#### 1. let subStream = mainStream
+如果你有仔细看第一段内容，很容易就会发现这是错的。随着mainStream的变化，subStream也在变动。
+#### 2. 遍历mainStream，把key和value一一复制给subStream
+看起来没问题，而且让我想起了Array.prototype.slice()方法，去查查[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)：
+>slice() 方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。
+如果该元素是个对象引用 （不是实际的对象）， 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。
+对于字符串、数字及布尔值来说（不是 String、Number 或者 Boolean 对象），slice 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。
+Object.assign()也是浅复制
+
+问题来了，如果mainString的某个属性保存的是一个引用数据类型，我们又回到了问题1，如何解决？
+#### 3.遍历mainStream，对每个value进行类型检测，如果是原始数据类型，直接复制，如果是是引用数据类型，则进行深度遍历
+好了，问题解决。
+多说一句，这里的类型检测 typeof操作符足以胜任，但如果想具体判断数据类型，可以用Object.prototype.string.call()，这个方法会返回对象内部的[[class]]属性，对应着每种具体数据类型。JQuery的"class2type"属性就是用了这种方法。
+
+###JQuery如何实现深复制浅复制
+源码有点长，就不贴出来了。
+建议[点这里](https://github.com/JadeTao/jQuery-annotation/blob/master/core.js)看看我注解的JQuery源码的core模块，139行。
+
+###聊一下Immutable
+Immutable Data是指一旦被创造后，就不可以被改变的数据。当它发生变化时，应该返回一个新的对象，而不是像JS的引用数据类型那样在本身进行修改。通过使用Immutable Data，可以让我们更容易的去处理缓存、回退、数据变化检测等问题，简化我们的开发。
+
+JavaScript的原始数据类型（string number）就是 Born as Immutable Data的，但它们太单薄了，没什么意义，我们在进行状态管理时需要 Immutable Dataset，比如object，array，set，map等。
+通过自行封装的deep copy函数，我们可以简单地模拟immutable结构，但性能太差，时间复杂度最优O(n)，最差O(n2)。
+
+JavaScript没有原生支持immutable数据结构，但在这种情况下总会有第三方类库站出来——Immutable.js，Immutable的实现有些像链表，添加一个新结点把旧结点的父子关系转移到新结点上，性能提升很多。它提供了七种不可变数据结构和丰富的api。 有了Immutable.js和Rxjs（操作数据流），js可以向Function programming和 Reactive Programming靠得更近。`
+	},{
+		id:5,title:'JavaScript继承的五种方法',createdAt:'2017年4月12日',tags:['原生','继承'],preview:'',content:`平常写JS几乎很难接触到继承，但JS又是一门OOP的语言，继承不可或缺，因此我整理了常用的继承方法。内容参考了阮一峰的相关文章。
+
+我们有一个父类，
+
+
+    function Father() {
+        this.family = 'Animal'
+    }
+
+有一个子类，使其继承父类
+
+    function Child(title,color) {
+        this.title = title
+        this.color = color
+    }
+
+#### 1.构造函数绑定
+
+    function Child(title,color) {
+        Father.apply(this,arguments)
+        this.title = title
+        this.color = color
+    }
+    
+    let tom = new Child('tom','brown')
+    tom.family //"Animal"
+
+
+#### 2.prototype模式
+重新赋值了Child.prototype
+
+     Child.prototype = new Father()
+     //此时Child.prototype.constructor为 Father，需修正
+     Child.prototype.constructor = Child
+     
+     let tom = new Child('tom','brown')
+     tom.family  //"Animal"
+
+
+#### 3.直接继承
+
+//改写
+
+    function Father(){ }
+    Father.prototype.species = "Animal"
+    
+    Child.prototype = Father.prototype
+    Child.prototype.constructor = Child
+    
+    let tom = new Child('tom','brown')
+    tom.family  //"Animal"
+
+效率比较高，直接指向引用，但是对\`Child.prototype\`的修改会直接影响\`Father.prototype\`。并且\`Child.prototype.constructor = Cat\`也改掉了\`Father.prototype\`的\`constructor\`
+
+#### 4.利用空对象作为中介
+
+    let F = function(){}
+    F.prototype = Father.prototype
+    Child.prototype = new F()
+    Child.prototype.constructor = Child
+
+消除3的弊端
+
+#### 5.拷贝继承
+将父对象的prototype对象中的属性，一一拷贝给Child对象的prototype对象。
+这里又可以引申出深拷贝和浅拷贝，详见我另一篇文章。`
+	}, {
 		id: 4, title: '阿里的一道编程测验', createdAt: '2017年3月10日', tags: ['面试', '设计模式'], preview: '', content: `
-前天投了阿里\`test\`的暑期实习前端岗位，按流程我被要求做一道编程测验，题目如下
+前天投了阿里的暑期实习前端岗位，按流程我被要求做一道编程测验，题目如下
 ![这里](http://om1o3l1z1.bkt.clouddn.com/ali.png)
 当时限时30min，结点判定和递归方面没处理好，所以今天特地拿出时间整理了一下。
 ###先贴整理好的代码
