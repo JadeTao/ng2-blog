@@ -20,8 +20,8 @@ export class ArticleDetailComponent implements OnInit {
         private location: Location
     ) { }
 
-    private article: Detail
-    private content: any
+    public article: Detail
+    public content: any
     goBack() {
         this.location.back()
     }

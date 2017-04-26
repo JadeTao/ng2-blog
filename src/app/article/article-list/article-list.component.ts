@@ -15,8 +15,8 @@ export class ArticleListComponent implements OnInit {
         private listService: ArticleService,
     ) { }
 
-    private list: Detail[]
-    private div: HTMLElement
+    public list: Detail[]
+    public div: HTMLElement
     scroll() {        
         
     }
