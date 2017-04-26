@@ -12,7 +12,7 @@ export class ArtiComponent implements OnInit {
 
   constructor(private listService: ArticleService) { }
 
-  private list: Detail[]
+  public list: Detail[]
   ngOnInit() {
     this.list = this.listService.getList().slice(0,4)
   }

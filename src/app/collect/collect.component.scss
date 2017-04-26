@@ -1,0 +1,7 @@
+.main {
+    column-count: 3;
+    .wrapper {
+        padding: 10px 0 0 15px;
+        -webkit-column-break-inside:avoid;
+    }
+}

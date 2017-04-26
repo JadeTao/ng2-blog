@@ -17,47 +17,23 @@
                 <a class="mdl-navigation__link" [routerLink]="['/collect']" (click)="mdlLayout1.closeDrawer()">收藏夹</a>
             </nav>
         </mdl-layout-drawer>
-        <mdl-layout-content>
+        <mdl-layout-content class="main">
 
 
-            <div class="wrapper">
-                <mdl-card class="demo-card-square" mdl-shadow="2">
-                    <mdl-card-title mdl-card-expand>
-                        <h2 mdl-card-title-text>Update</h2>
+            <div class="wrapper" *ngFor="let item of site">
+                <mdl-card [ngStyle]="{'width':'400px'}" class="demo-card-square" mdl-shadow="2">
+                    <mdl-card-title mdl-card-expand [ngStyle]="{'height':item.height+'px','background-image':'url(' + item.photo + ')','background-size':'100% 100%'}">
+                        <h2 mdl-card-title-text></h2>
                     </mdl-card-title>
                     <mdl-card-supporting-text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
+                       {{item.title}}, {{item.desc}}
                     </mdl-card-supporting-text>
                     <mdl-card-actions mdl-card-border>
-                        <button mdl-button mdl-colored mdl-ripple>
-        View Updates
-      </button>
-                    </mdl-card-actions>
-                </mdl-card>
-                <mdl-card class="demo-card-square" mdl-shadow="2">
-                    <mdl-card-title mdl-card-expand>
-                        <h2 mdl-card-title-text>Update</h2>
-                    </mdl-card-title>
-                    <mdl-card-supporting-text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                    </mdl-card-supporting-text>
-                    <mdl-card-actions mdl-card-border>
-                        <button mdl-button mdl-colored mdl-ripple>
-        View Updates
-      </button>
-                    </mdl-card-actions>
-                </mdl-card>
-                <mdl-card class="demo-card-square" mdl-shadow="2">
-                    <mdl-card-title mdl-card-expand>
-                        <h2 mdl-card-title-text>Update</h2>
-                    </mdl-card-title>
-                    <mdl-card-supporting-text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                    </mdl-card-supporting-text>
-                    <mdl-card-actions mdl-card-border>
-                        <button mdl-button mdl-colored mdl-ripple>
-        View Updates
-      </button>
+                        <a target="_blank" href="{{item.url}}">
+                            <button mdl-button mdl-colored mdl-ripple>
+                                前往
+                            </button>
+                        </a>
                     </mdl-card-actions>
                 </mdl-card>
             </div>

@@ -9,11 +9,11 @@ export class AboutComponent implements OnInit {
 
   constructor(private el: ElementRef, private renderer: Renderer) { }
 
-  private tab: any = {
+  public tab: any = {
     tab0: true,
     tab1: false
   }
-  private button:HTMLElement[]
+  public button:HTMLElement[]
 
   changeTab(arg) {
     arg == 0 ? this.tab = { tab0: true, tab1: false } : this.tab = { tab0: false, tab1: true }

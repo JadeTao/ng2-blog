@@ -1,5 +1,4 @@
-import { LabModule } from './../../lab/lab.module';
-import { BaseModule } from './base/base.module';
+import { BaseModule } from './base/base.module'
 
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common'
@@ -13,7 +12,7 @@ import { AppComponent } from './app.component'
 import { IndexComponent } from './index/index.component'
 import { AppRoutingModule } from './app-routing.module'
 import { MdlModule } from '@angular-mdl/core'
-import { CollectComponent } from './collect/collect.component';
+import { CollectComponent } from './collect/collect.component'
 
 
 @NgModule({
@@ -30,7 +29,6 @@ import { CollectComponent } from './collect/collect.component';
     MdlModule,
     AppRoutingModule,
     BaseModule,
-    LabModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
