@@ -1,3 +1,5 @@
+import { Site } from './../static/entitis';
+import { SITE } from './../static/site';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CollectComponent implements OnInit {
 
   constructor() { }
-
+  site: Site[] = SITE
   ngOnInit() {
   }
 

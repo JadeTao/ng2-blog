@@ -14,11 +14,11 @@ import { IMG } from '../../static/mock-img'
 export class GalleryComponent implements OnInit {
 
     constructor(private el: ElementRef,private renderer:Renderer) {    }
-    private list: Img[]=IMG;
-    private allphoto
-    private therange
-    private left:Img[]=[]
-    private right:Img[]=[]
+    public list: Img[]=IMG;
+    public allphoto
+    public therange
+    public left:Img[]=[]
+    public right:Img[]=[]
  
     randomSort(){
         let arr=this.list;
