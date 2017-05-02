@@ -1,3 +1,5 @@
+import { DouyuComponent } from './douyu/douyu.component';
+import { TodoComponent } from './todo/todo.component';
 import { LabListComponent } from './lab-list/lab-list.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LabComponent } from './lab.component';
@@ -10,9 +12,12 @@ const routes: Routes = [
     children: [
       {
         path: '', component: LabListComponent
-      },
-      {
+      }, {
         path: 'gallery', component: GalleryComponent
+      }, {
+        path: 'todo', component: TodoComponent
+      }, {
+        path: 'douyu', component: DouyuComponent
       },]
   }
 ];
