@@ -1,4 +1,4 @@
-import { TodoModule } from './todo/todo.module';
+import { FormsModule } from '@angular/forms';
 import { DouyuModule } from './douyu/douyu.module';
 import { MdlModule } from '@angular-mdl/core';
 import { LabRoutes } from './lab.routing';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { LabComponent } from './lab.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LabListComponent } from './lab-list/lab-list.component';
+import { TodoComponent } from './todo/todo.component';
 
 
 
@@ -17,12 +18,13 @@ import { LabListComponent } from './lab-list/lab-list.component';
     LabRoutes,
     MdlModule,
     DouyuModule,
-    TodoModule
+    FormsModule
   ],
   declarations: [
     LabComponent,
     GalleryComponent,
-    LabListComponent
+    LabListComponent,
+    TodoComponent
 ]
 })
 export class LabModule { }
